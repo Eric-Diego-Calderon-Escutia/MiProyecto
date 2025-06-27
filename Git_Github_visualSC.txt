@@ -221,3 +221,5 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 $ pwd
 
 ~~cómo se abre y cierra un archivo?
+
+segunda línea alv.
