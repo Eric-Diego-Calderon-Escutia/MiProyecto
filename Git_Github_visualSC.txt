@@ -3,7 +3,6 @@ Clonar un repositorio:
 VSC: botón de clonar repositorio, luego poner el link de la página GitHub donde está la carpeta a clonar y el nombre (esos dos juntos son remote, aunque puede haber más remotes que no necesariamente sean origin) con el nombre de origin (el que es el repositorio remoto original) y upstream es el repositorio remoto original, pero para un fork (puede ser la rama remota). (antes lo había cambiado), y guardarla en la carpeta que yo indique. main es el que cloné y ese sí está en mi cuenta.
 origin/main sería la rama seguida por main
 
-
 Guardar los cambios al repositorio:
 
 Primero darle a + , que es como mandarlo al stage, y luego ya lo subo con commit. Al no hacer nada de esto, es como si los cambios solo estuvieran en el espacio local. Luego para mandar esto a GitHub, se tiene que hacer un push. Para poder hacer esto, primero debo hacer un fork, y el dueño del GitHub me tiene que dar los permisos, sino me va a marcar un error.
