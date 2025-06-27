@@ -167,6 +167,7 @@ Pueden ser compartidos por varios desarrolladores, y cada desarrollador tiene un
 ~lo de mandar a varios repositorios remotos al mismo tiempo)
 ~todo esto, pero en VSC
 ~pull request
+~diferencia entre merge y el pull cuando hay cambios en ambos repositorios.
 
 $ git clone https://github.com/Eric-Diego-Calderon-Escutia/MiProyecto.git
 Para clonar un repositorio remoto para convertirlo en un repositorio local
@@ -179,7 +180,9 @@ $git remote rename origin repo_remoto
 Esto renombra al repositorio (el cual por default lo llaman 'origin'). Ojo, 'origin' es el nombre de todo el repositorio, no de una rama (esas son main o master). El cambio del nombre es un alias solo para mí, no afecta el repositorio global en GitHub ni los repositorios locales de otras personas. LA PALABRA 'remote' SE REFIERE A LA CONFIGURACIÓN DE MIS CONEXIONES EXTERNAS, Git tiene que saber que estoy trabajando con un repositorio remoto, no con una rama local o un archivo.
 
 $ git diff main repo_remoto/main
-Sirve para ver si hay diferencias entre el repositorio remoto y el mío local, así me doy cuenta si ya se ha actualizado. IMPORTANTE: ANTES DE EJECUTARLO, TENGO QUE EJECUTAR $ git fetch, QUE TRAE LOS CAMBIOS, PERO NO LOS FUSIONARÁ CON NINGUNA RAMA DE TRABAJO (como sí lo hace $ git pull) 
+Sirve para ver si hay diferencias entre el repositorio remoto y el mío local, así me doy cuenta si ya se ha actualizado. IMPORTANTE: ANTES DE EJECUTARLO, TENGO QUE EJECUTAR $ git fetch, QUE TRAE LOS CAMBIOS, PERO NO LOS FUSIONARÁ CON NINGUNA RAMA DE TRABAJO (como sí lo hace $ git pull
+$ git pull -m "explicación del merge"
+Esto último es para cuando hago un merge. Si no pongo comentario, entonces
 
 ------------------------
 ------------------------
@@ -201,5 +204,3 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 $ pwd
 
 ~~cómo se abre y cierra un archivo?
-
-Ésta es otra prueba
