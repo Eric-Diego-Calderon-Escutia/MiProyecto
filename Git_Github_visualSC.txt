@@ -1,0 +1,200 @@
+Clonar un repositorio:
+
+VSC: botón de clonar repositorio, luego poner el link de la página GitHub donde está la carpeta a clonar y el nombre (esos dos juntos son remote, aunque puede haber más remotes que no necesariamente sean origin) con el nombre de origin (el que es el repositorio remoto original) y upstream es el repositorio remoto original, pero para un fork (puede ser la rama remota). (antes lo había cambiado), y guardarla en la carpeta que yo indique. main es el que cloné y ese sí está en mi cuenta.
+origin/main sería la rama seguida por main
+
+
+Guardar los cambios al repositorio:
+
+Primero darle a + , que es como mandarlo al stage, y luego ya lo subo con commit. Al no hacer nada de esto, es como si los cambios solo estuvieran en el espacio local. Luego para mandar esto a GitHub, se tiene que hacer un push. Para poder hacer esto, primero debo hacer un fork, y el dueño del GitHub me tiene que dar los permisos, sino me va a marcar un error.
+
+Otra forma es cambiar mi usuario y correo al del propietario del github, para así hacer los cambios directamente. Pero you los haré desde mi correo @outlook, porque así puedo practicar como si fuera un coolaborador más del proyecto.
+
+
+-Me pide hacer un pull request o un fork
+
+-Commit y push no son lo mismo
+
+
+Dudas: 
+
+-el bash en visual studio code para poner el código directamente
+-origin
+-upstream
+-fork y cómo se interrelacionan
+-las posibles cosas que se pueden hacer: como de la lap a GitHub, de un GitHub a otro GitHub, etc
+
+
+Código
+
+git config --global user.name
+git config --global user.email
+
+git fetch upstream
+git merge upstream/main
+git push --set-upstream origin main
+
+Sí se puede
+
+-Sí se puede hacer push a varias cuentas de GitHub al mismo tiempo
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Curso de Coursera
+
+----------------CONCEPTOS BÁSICOS DE GIT
+
+-----Conceptos básicos:
+
+-versión: foto completa del repositorio con una referencia única (hash sha1). Se guarda una referencia al archivo anterior de los archivos que no han cambiado.
+
+-Zonas de trabajo: Espacio local, Stage (área de preparación) y el repositorio (directorio.git)
+
+-----Operaciones básicas:
+
+-Crear un repositorio local (y por ende el stage): ubicarme en la raíz del directorio con
+
+$ cd /c/Users/eric_/OneDrive/Desktop/Git-Github 
+ojo, al copiar la ruta en Windows, me la da en formato de Windows (C:\Users\eric_\OneDrive\Desktop\Git-GitHub), por lo cual la tengo que cambiar a unix
+
+después hacer
+$ git init
+
+~Al parecer ya no aparece el archivo que antes aparecía en la carpeta al crear un repositorio (directorio oculto).
+
+-Crear archivos en mi espacio de trabajo y luego llevarlos al repositorio local
+
+$ git commit -m "probando el commit"     (manda lo que está en el stage, con el mensaje, y cada commit es una nueva versión del repositorio). Para previamente estar en el stage, primero se debió hacer el git add "nombre del archivo"
+
+-Modificar archivos en el espacio local y actualizar el repositorio
+
+-Consultar el estado de los archivos en las diferentes zonas
+
+$ git status
+
+-----Estados del archivo
+
+-untracked (Sin rastrear): cuando solo lo creo en el espacio local.
+-staged (Preparado): cuando ya puse add
+-unmodified (sin modificar): cuando ya puse commit
+-modified (modificado): volver a modificar un archivo después de haber hecho un commit (tendría que hacer un add y luego un commit)
+
+-----Más código 
+
+-Renombrar rama: 
+$ git branch -M main
+
+-mandar al stage (archivos nuevos o modificados)
+$ git add sigo_haciendo_pruebas.txt
+$ git add .       (esto manda todo) 
+$ git add <archivo_1> <archivo_2> [y así]
+$ git add *.txt [todos los archivos de un tipo]
+
+
+-Consultar el estatus del repositorio
+$ git status
+
+-Cuando quiero meter una carpeta git dentro de otra git, le quito el .git
+$ rm -rf Otra_prueba/.git
+
+-Deshacer los cambios hechos
+$ git restore que.txt
+
+-Versiones del repositorio
+$ git log
+$ git log --oneline
+$ git log -p
+
+-versión de mi git 
+$ git --version
+
+-mostrar las configuraciones de git que están activas para mi entorno actual
+$ git config --list 
+
+-Establecer mi nombre y correo electrónico (de manera global)
+$ git config --global user.name "su_nombre"
+$ git config --global user.email su_correo@example.com
+
+-Volver a una versión anterior (pero tener precaución)
+$ git reset        (Se usa para "deshacer" commits, lo cual puede reescribir el historial. Es poderoso pero debe usarse con precaución, especialmente en ramas compartidas)
+$ git revert       (Crea un nuevo commit que "deshace" los cambios de un commit anterior, sin reescribir el historial. Es más seguro para ramas compartidas)
+$ git checkout [hash_del_commit]          (Te permite ver el estado del proyecto en un commit específico (entras en un estado de "detached HEAD"), pero no es la forma directa de "devolverse" para seguir trabajando desde ahí en un flujo normal. Para eso, normalmente creas una nueva rama a partir de ese punto). Creo que $ git checkout por sí solo, solo cambia de ramas
+
+-Cambiar o crear ramas
+$ git switch
+
+- Guardar temporalmente los cambios no commiteados (tanto los del directorio de trabajo como los del área de preparación) para poder cambiar de rama o trabajar en otra cosa, sin tener que hacer un commit incompleto.
+$ git stash
+
+
+------------------------
+------------------------
+------------------------Tutorial: operaciones básicas
+
+$ git commit --amend -m "nuevo mensaje"
+
+Toma el contenido de tu staging area actual y lo combina con el contenido del último commit. Es útil si olvidaste incluir un archivo en tu último commit, o si quieres corregir el mensaje del commit.
+
+$ git commit --amend --no-edit
+Agregar --no-edit mantienes el mensaje del commit original intacto
+~(Eric) sirven para editar el mensaje, editar/agregar/quitar archivos o ambas.
+
+$ git diff 838c34ad28ac49607019ac54a8f84373c0801735..3afcadcbf0f550668d25951012731ffdf53ce3b0
+Para ver los cambios realizados entre dos commits (no necesariamente sucesivos) [también sirve para comparar dos ramas, o dos archivos]
+
+$ git checkout HEAD <ruta_archivo>
+Deshace cambios en la copia de trabajo local
+(Eric) creo que es mejor usar $ git restore <ruta_archivo>
+
+------------------------
+------------------------
+------------------------Repositorios remotos
+
+---Repositorio remoto (bare): repositorio alojado en un servidor; en una red local o en internet.
+No tienen zona de trabajo ni zona de preparación.
+Pueden ser compartidos por varios desarrolladores, y cada desarrollador tiene una copia del repositorio en su máquina local. Todos los cambios ocurren en los repositorios locales, y se sincronizan con el repositorio remoto.
+
+---Pasos para crear un repositorio remoto y trabajar con él: 
+1) Crearlo en el SERVIDOR
+2) Obtener una copia en la máquina local. Comando clone
+3) Después de haber hecho cambios en mi repositorio local (add, commit), ahora ya puedo mandarlos al repositorio remoto. Comando push
+4)Cuando un desarrollador cambia el repositorio remoto, para sincronizar los cambios se ocupa el comando pull 
+
+
+~pend: clonar repositorio local,,, se puede primero crear el repositorio local, y después clonarlo al repositorio remoto?
+~cómo mover la ubicación de un repositorio local?
+~lo de mandar a varios repositorios remotos al mismo tiempo)
+~todo esto, pero en VSC
+
+$ git clone https://github.com/Eric-Diego-Calderon-Escutia/MiProyecto.git
+Para clonar un repositorio remoto para convertirlo en un repositorio local
+
+
+$ git remote -v 
+Sirve para ver la ubicación de mi repositorio remoto al cual está conectado el repositorio local 
+
+$git remote rename origin repo_remoto
+Esto renombra al repositorio (el cual por default lo llaman 'origin'). Ojo, 'origin' es el nombre de todo el repositorio, no de una rama (esas son main o master). El cambio del nombre es un alias solo para mí, no afecta el repositorio global en GitHub ni los repositorios locales de otras personas. LA PALABRA 'remote' SE REFIERE A LA CONFIGURACIÓN DE MIS CONEXIONES EXTERNAS, Git tiene que saber que estoy trabajando con un repositorio remoto, no con una rama local o un archivo.
+
+------------------------
+------------------------
+------------------------UNIX
+-Mostrar directorios ocultos
+$ ls -a
+Muestra todos los directorios, y los ocultos (Eric)
+$ rm [nombre del archivo]
+$ cd [ruta en formato linux]
+$ mkdir [nombre de la carpeta]
+
+$ cd ./ruta (directorio actual y de ahí moverme a la ruta)
+$ cd .. (directorio anterior (padre))
+$ cd ../ruta (directorio anterior (padre) y de ahí moverme a la ruta)
+$ cd ruta (equivalente a cd ./ruta
+$ cd ../.. 
+$ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
+
+$ pwd
+
+~~cómo se abre y cierra un archivo?
