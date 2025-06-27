@@ -196,6 +196,11 @@ Esto último es para cuando hago un merge. Si no pongo comentario, entonces
 -------------------
 -------------------Resolver conflictos
 
+-Al parecer antes de hacer $ git status remote, primero tengo que hacer$ git fetch
+
+-(Eric)Tengo que hacer commit antes de hacer el pull (creo que es para evitar errores de merge)
+
+
 ------------------------
 ------------------------
 ------------------------UNIX
