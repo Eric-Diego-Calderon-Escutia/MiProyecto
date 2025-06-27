@@ -185,7 +185,7 @@ No es recomendable poner mensajes a la hora de hacer el git push (esos van el el
 
 $ git diff main repo_remoto/main
 Sirve para ver si hay diferencias entre el repositorio remoto y el mío local, así me doy cuenta si ya se ha actualizado. IMPORTANTE: ANTES DE EJECUTARLO, TENGO QUE EJECUTAR $ git fetch, QUE TRAE LOS CAMBIOS, PERO NO LOS FUSIONARÁ CON NINGUNA RAMA DE TRABAJO (como sí lo hace $ git pull
-$ git pull -m "explicación del merge"
+$ git pull 
 <<<<<<< HEAD
 Esto último es para cuando hago un merge. Si no pongo comentario, entonces tengo que ponerlo en el editor de texto que me brinda GitHub, porque sino no se guardan los cambios
 =======
@@ -221,3 +221,6 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 $ pwd
 
 ~~cómo se abre y cierra un archivo?
+
+
+Tercera línea esta vez, solo para dejar más claro
