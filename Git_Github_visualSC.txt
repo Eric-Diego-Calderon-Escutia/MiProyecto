@@ -134,7 +134,7 @@ $ git stash
 
 $ git commit --amend -m "nuevo mensaje"
 
-Toma el contenido de tu staging area actual y lo combina con el contenido del último commit. Es útil si olvidaste incluir un archivo en tu último commit, o si quieres corregir el mensaje del commit.
+Toma el contenido de tu staging area actual y lo combina con el contenido del último commit. Es útil si olvidaste incluir un archivo en tu último commit, o si quieres corregir el mensaje del commit. No se puede usar --amend si hay un merge actual que se tenga que hacer.
 
 $ git commit --amend --no-edit
 Agregar --no-edit mantienes el mensaje del commit original intacto
@@ -168,6 +168,7 @@ Pueden ser compartidos por varios desarrolladores, y cada desarrollador tiene un
 ~todo esto, pero en VSC
 ~pull request
 ~diferencia entre merge y el pull cuando hay cambios en ambos repositorios.
+~git pull se pone con algo más? 
 
 $ git clone https://github.com/Eric-Diego-Calderon-Escutia/MiProyecto.git
 Para clonar un repositorio remoto para convertirlo en un repositorio local
@@ -190,6 +191,10 @@ Esto último es para cuando hago un merge. Si no pongo comentario, entonces teng
 =======
 Esto último es para cuando hago un merge. Si no pongo comentario, entonces
 >>>>>>> 77de57dc27f1f8cf826ee94d208677aeb787d441
+
+-------------------
+-------------------
+-------------------Resolver conflictos
 
 ------------------------
 ------------------------
