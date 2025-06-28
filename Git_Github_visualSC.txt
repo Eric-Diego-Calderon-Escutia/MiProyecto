@@ -217,4 +217,4 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 
 $ pwd
 
-~~cómo se abre y cierra un archivo? MAÑANA MAÑANA
+~~cómo se abre y cierra un archivo?
