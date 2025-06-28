@@ -1,4 +1,4 @@
-Clonar un repositorio: HOY
+Clonar un repositorio:
 
 VSC: botón de clonar repositorio, luego poner el link de la página GitHub donde está la carpeta a clonar y el nombre (esos dos juntos son remote, aunque puede haber más remotes que no necesariamente sean origin) con el nombre de origin (el que es el repositorio remoto original) y upstream es el repositorio remoto original, pero para un fork (puede ser la rama remota). (antes lo había cambiado), y guardarla en la carpeta que yo indique. main es el que cloné y ese sí está en mi cuenta.
 origin/main sería la rama seguida por main
@@ -217,4 +217,4 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 
 $ pwd
 
-~~cómo se abre y cierra un archivo?
+~~cómo se abre y cierra un archivo? MAÑANA
