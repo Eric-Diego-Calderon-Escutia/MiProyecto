@@ -103,8 +103,17 @@ $ git restore que.txt
 
 -Versiones del repositorio
 $ git log
+
+Aquí me saldrá esto: 
+
+HEAD -> main: estoy trabajando en la rama main
+repo_remoto/main <usualmente es origin/main, donde origin es el nombre del repositorio remoto (no el nombre que aparece en la página de github)>: es la versión remota de main, que puede estar sincronizada o no.
+
+Si aparecen juntos (HEAD -> main, repo_remoto/main): estoy en main y estoy sincronizado con la rama remota.
+
 $ git log --oneline
 $ git log -p
+
 
 -versión de mi git 
 $ git --version
@@ -245,3 +254,5 @@ $ pwd
 ~~cómo se abre y cierra un archivo?
 
 Ésta línea es de prueba
+
+
