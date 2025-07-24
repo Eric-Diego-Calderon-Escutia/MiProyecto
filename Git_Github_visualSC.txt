@@ -201,6 +201,13 @@ Esto último es para cuando hago un merge. Si no pongo comentario, entonces
 
 -------------------
 -------------------
+-------------------Forks y relacionados
+
+$ git remote add upstream https://github.com/Eric-Diego-Calderon-Escutia/MiProyecto.git
+Sirve para poder actualizar el repositorio 'forkeado' con el repositorio principal, pues de otra forma no es posible.
+
+-------------------
+-------------------
 -------------------Resolver conflictos
 
 -Al parecer antes de hacer $ git status remote, primero tengo que hacer $ git fetch para poder ver el estado del repositorio remoto
