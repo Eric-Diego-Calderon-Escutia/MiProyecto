@@ -116,6 +116,8 @@ Si aparecen juntos (HEAD -> main, repo_remoto/main): estoy en main y estoy sincr
 Esto apunta a la rama predeterminada del repositorio remoto. En la mayoría de los casos, origin/HEAD → origin/main.
 Esto sirve para que Git sepa cuál es la rama principal del remoto cuando haces un clone, por ejemplo.
 
+(HEAD -> main, upstream/main, origin/main, origin/HEAD) aquí upstream/main hace referencia al repositorio upstream y la rama main (Eric)
+
 $ git log --oneline
 $ git log -p
 
@@ -178,19 +180,6 @@ Pueden ser compartidos por varios desarrolladores, y cada desarrollador tiene un
 4)Cuando un desarrollador cambia el repositorio remoto, para sincronizar los cambios se ocupa el comando pull 
 
 
-~pend: clonar repositorio local,,, se puede primero crear el repositorio local, y después clonarlo al repositorio remoto?
-~cómo mover la ubicación de un repositorio local?
-~lo de mandar a varios repositorios remotos al mismo tiempo)
-~todo esto, pero en VSC
-~pull request
-~diferencia entre merge y el pull cuando hay cambios en ambos repositorios.
-~git pull se pone con algo más? 
-~Cambios con conflicto y cambios sin conflicto
-~Puede suceder que esté trabajando con una rama de un repositorio remoto que se llame de una forma, pero que para mi repositorio local se llame diferente, lo cual genere problemas. Cómo se solucionaría esto?
-~existe el access token
-~git pull --rebase
-~Cómo hacer un fork pero con una rama distinta a la rama main
-
 $ git clone https://github.com/Eric-Diego-Calderon-Escutia/MiProyecto.git
 Para clonar un repositorio remoto para convertirlo en un repositorio local. Por defecto deja el mismo nombre, pero si quiero renombrarlo, solo pongo el nombre que quiera después de la url (dejando un espacio, claro está).
 
@@ -201,6 +190,9 @@ Sirve para ver la ubicación de mi repositorio remoto al cual está conectado el
 $git remote rename origin repo_remoto
 Esto renombra al repositorio (el cual por default lo llaman 'origin'). Ojo, 'origin' es el nombre de todo el repositorio, no de una rama (esas son main o master). El cambio del nombre es un alias solo para mí, no afecta el repositorio global en GitHub ni los repositorios locales de otras personas. LA PALABRA 'remote' SE REFIERE A LA CONFIGURACIÓN DE MIS CONEXIONES EXTERNAS, Git tiene que saber que estoy trabajando con un repositorio remoto, no con una rama local o un archivo.
 
+$ git push origin main
+origin: nombre del repositorio remoto (por defecto)
+main: rama desde la que quieres traer los cambios
 $ git push
 No es recomendable poner mensajes a la hora de hacer el git push (esos van el el commit)
 $ git push -u <nombre del repositorio remoto (puede que sea distinto al nombre de la carpeta como tal)> <nombre de mi rama> 
@@ -210,6 +202,10 @@ $ git push -f origin master //la opción -f o --force sobre escribe toda la estr
 
 $ git diff main repo_remoto/main
 Sirve para ver si hay diferencias entre el repositorio remoto y el mío local, así me doy cuenta si ya se ha actualizado. IMPORTANTE: ANTES DE EJECUTARLO, TENGO QUE EJECUTAR $ git fetch, QUE TRAE LOS CAMBIOS, PERO NO LOS FUSIONARÁ CON NINGUNA RAMA DE TRABAJO (como sí lo hace $ git pull
+
+$ git pull origin main
+origin: nombre del repositorio remoto (por defecto)
+main: rama desde la que quieres traer los cambios
 $ git pull 
 Esto último es para cuando hago un merge. Si no pongo comentario, entonces tengo que ponerlo en el editor de texto que me brinda GitHub, porque sino no se guardan los cambios
 Esto último es para cuando hago un merge. Si no pongo comentario, entonces
@@ -221,6 +217,8 @@ Esto último es para cuando hago un merge. Si no pongo comentario, entonces
 
 $ git remote add upstream https://github.com/Eric-Diego-Calderon-Escutia/MiProyecto.git
 Sirve para poder actualizar el repositorio 'forkeado' con el repositorio principal, pues de otra forma no es posible.
+$ git pull upstream main
+Trae los cambios desde la rama main del repositorio remoto llamado upstream a mi repositorio local
 
 -------------------
 -------------------
@@ -260,3 +258,22 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 $ pwd
 
 ~~cómo se abre y cierra un archivo?
+
+
+-----------------------------
+-----------------------------
+-----------------------------Pendientes
+
+~pend: clonar repositorio local,,, se puede primero crear el repositorio local, y después clonarlo al repositorio remoto?
+~cómo mover la ubicación de un repositorio local?
+~lo de mandar a varios repositorios remotos al mismo tiempo)
+~todo esto, pero en VSC
+~pull request
+~diferencia entre merge y el pull cuando hay cambios en ambos repositorios.
+~git pull se pone con algo más? 
+~Cambios con conflicto y cambios sin conflicto
+~Puede suceder que esté trabajando con una rama de un repositorio remoto que se llame de una forma, pero que para mi repositorio local se llame diferente, lo cual genere problemas. Cómo se solucionaría esto?
+~existe el access token
+~git pull --rebase
+~Cómo hacer un fork pero con una rama distinta a la rama main
+~Poner la función completa de cada comando y la simplificada
