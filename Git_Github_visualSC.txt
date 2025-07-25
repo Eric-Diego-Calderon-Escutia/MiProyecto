@@ -263,3 +263,5 @@ $ pwd
 Entonces aquí qué pasa?
 Vamos a ver qué onda 
 #creo que el problema es que no puse add ni commit y había cambios en el repositorio remoto
+#creo que el problema es que no puse add ni commit
+#y que había cambios en el repo remoto
