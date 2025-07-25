@@ -212,6 +212,7 @@ Sirve para ver si hay diferencias entre el repositorio remoto y el mío local, a
 $ git pull 
 Esto último es para cuando hago un merge. Si no pongo comentario, entonces tengo que ponerlo en el editor de texto que me brinda GitHub, porque sino no se guardan los cambios
 Esto último es para cuando hago un merge. Si no pongo comentario, entonces
+~cuando hay un pull sin que yo haya hecho cambios en mi repo local, ya no es necesario hacer un add ni commit, es como si ya se hubieran hecho solos.
 
 -------------------
 -------------------
@@ -234,7 +235,8 @@ Esto sirve para no tener que hacer el add, al mezclar (automáticamente lleva al
 ------------------------
 ------------------------Buenas prácticas GitHub
 
--primero hacer un pull antes de empezar a trabajar en mi repositorio local
+-Primero hacer un pull antes de empezar a trabajar en mi repositorio local
+-Es buena práctica hacer git add y git commit antes de un git pull si tienes cambios locales no confirmados
 
 ------------------------
 ------------------------
@@ -257,9 +259,3 @@ $ cd ../../ruta (directorio anterior al anterior, y de ahí moverme a la ruta)
 $ pwd
 
 ~~cómo se abre y cierra un archivo?
-
-Ésta línea es de prueba
-
-Entonces aquí qué pasa?
-Vamos a ver qué onda 
-#creo que el problema es que no puse add ni commit y había cambios en el repositorio remoto
