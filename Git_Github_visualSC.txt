@@ -111,6 +111,11 @@ repo_remoto/main <usualmente es origin/main, donde origin es el nombre del repos
 
 Si aparecen juntos (HEAD -> main, repo_remoto/main): estoy en main y estoy sincronizado con la rama remota.
 
+(origin/main, origin/HEAD): significa este commit es el último commit conocido tanto para la rama main del repositorio remoto como para la rama predeterminada del remoto (origin/HEAD).
+
+Esto apunta a la rama predeterminada del repositorio remoto. En la mayoría de los casos, origin/HEAD → origin/main.
+Esto sirve para que Git sepa cuál es la rama principal del remoto cuando haces un clone, por ejemplo.
+
 $ git log --oneline
 $ git log -p
 
@@ -254,6 +259,8 @@ $ pwd
 ~~cómo se abre y cierra un archivo?
 
 Ésta línea es de prueba
+
 Vamos a ver qué onda 
+
 
 
